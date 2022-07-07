@@ -30,6 +30,28 @@ class FilesManagerFileBase extends BaseEntity
     protected ?FilesManagerFolderBase $folder = null;
 
     /**
+     * @ORM\Column (type="json")
+     * @OA\Property(type="array", @OA\Items(type="string"))
+     */
+    protected array $shared = [];
+
+    /**
+     * @return array
+     */
+    public function getShared(): array
+    {
+        return $this->shared;
+    }
+
+    /**
+     * @param array $shared
+     */
+    public function setShared(array $shared): void
+    {
+        $this->shared = $shared;
+    }
+
+    /**
      * @return FilesManagerFolderBase|null
      */
     public function getFolder(): ?FilesManagerFolderBase

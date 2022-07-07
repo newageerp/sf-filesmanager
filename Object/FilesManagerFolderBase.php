@@ -34,6 +34,7 @@ class FilesManagerFolderBase extends BaseEntity
 
     /**
      * @ORM\Column (type="json")
+     * @OA\Property(type="array", @OA\Items(type="string"))
      */
     protected array $shared = [];
 
