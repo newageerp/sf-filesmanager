@@ -8,7 +8,7 @@
   },
   "require": {
     "doctrine/orm": "^2",
-    "newageerp/sf-base-entity": "^0",
+    "newageerp/sf-base-entity": "^0"
   },
   "license": "MIT",
   "authors": [
