@@ -25,6 +25,27 @@ class FilesManagerFileBase extends BaseEntity
     protected int $filesSize = 0;
 
     /**
+     * @ORM\ManyToOne(targetEntity="FilesManagerFolder", inversedBy="files")
+     */
+    protected ?FilesManagerFolderBase $folder = null;
+
+    /**
+     * @return FilesManagerFolderBase|null
+     */
+    public function getFolder(): ?FilesManagerFolderBase
+    {
+        return $this->folder;
+    }
+
+    /**
+     * @param FilesManagerFolderBase|null $folder
+     */
+    public function setFolder(?FilesManagerFolderBase $folder): void
+    {
+        $this->folder = $folder;
+    }
+
+    /**
      * @return string
      */
     public function getFileName(): string
